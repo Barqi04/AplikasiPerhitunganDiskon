@@ -50,25 +50,40 @@ public class FormDiskon extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel1.setText("Aplikasi Perhitungan Diskon");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 17, -1, -1));
 
         jLabel2.setText("Harga asli");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 62, -1, -1));
 
         jLabel3.setText("Persentase Diskon");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 102, -1, -1));
 
         jLabel4.setText("Harga Akhir");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 223, -1, -1));
 
-        jLabel5.setText("Penghematan");
+        jLabel5.setText("Jumlah Penghematan");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 263, -1, -1));
 
-        txtHargaAsli.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtHargaAsliActionPerformed(evt);
+        txtHargaAsli.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtHargaAsliFocusGained(evt);
             }
         });
+        txtHargaAsli.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtHargaAsliKeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtHargaAsli, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 59, 193, -1));
 
         txtHargaAkhir.setEditable(false);
+        jPanel1.add(txtHargaAkhir, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 220, 179, -1));
 
         txtPenghematan.setEditable(false);
+        jPanel1.add(txtPenghematan, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 260, 179, -1));
 
         btnHitung.setText("Hitung");
         btnHitung.addActionListener(new java.awt.event.ActionListener() {
@@ -76,6 +91,7 @@ public class FormDiskon extends javax.swing.JFrame {
                 btnHitungActionPerformed(evt);
             }
         });
+        jPanel1.add(btnHitung, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, -1, -1));
 
         btnReset.setText("Reset");
         btnReset.addActionListener(new java.awt.event.ActionListener() {
@@ -83,6 +99,7 @@ public class FormDiskon extends javax.swing.JFrame {
                 btnResetActionPerformed(evt);
             }
         });
+        jPanel1.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(304, 300, -1, -1));
 
         comboDiskon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0%", "10%", "20%", "30%", "40%", "50%" }));
         comboDiskon.addItemListener(new java.awt.event.ItemListener() {
@@ -90,17 +107,8 @@ public class FormDiskon extends javax.swing.JFrame {
                 comboDiskonItemStateChanged(evt);
             }
         });
-        comboDiskon.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                comboDiskonActionPerformed(evt);
-            }
-        });
-
-        txtKupon.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtKuponActionPerformed(evt);
-            }
-        });
+        jPanel1.add(comboDiskon, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 99, 193, -1));
+        jPanel1.add(txtKupon, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 183, 179, -1));
 
         sliderDiskon.setMajorTickSpacing(10);
         sliderDiskon.setMaximum(50);
@@ -111,100 +119,16 @@ public class FormDiskon extends javax.swing.JFrame {
                 sliderDiskonStateChanged(evt);
             }
         });
+        jPanel1.add(sliderDiskon, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 133, -1, -1));
 
         lblSlider.setText("Slider Diskon");
+        jPanel1.add(lblSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 133, -1, -1));
 
-        jLabel7.setText("Kode Kupon (Opsional)");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel7)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel5)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblSlider)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addGap(69, 69, 69))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addGap(26, 26, 26)))
-                            .addComponent(jLabel4))
-                        .addGap(14, 14, 14)))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(sliderDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(7, 7, 7)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtHargaAsli)
-                                .addComponent(comboDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addGap(21, 21, 21)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(txtKupon)
-                                    .addComponent(txtHargaAkhir, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
-                                    .addComponent(txtPenghematan))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(btnHitung)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(btnReset))))))
-                .addGap(0, 36, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(121, 121, 121))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel1)
-                .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtHargaAsli, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(comboDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblSlider)
-                    .addComponent(sliderDiskon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtKupon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(15, 15, 15)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtHargaAkhir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPenghematan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnReset)
-                    .addComponent(btnHitung))
-                .addContainerGap(14, Short.MAX_VALUE))
-        );
+        jLabel7.setText("Kode Kupon");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 186, -1, -1));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Riwayat Perhitungan"));
-        jPanel2.setLayout(new java.awt.GridLayout());
+        jPanel2.setLayout(new java.awt.GridLayout(1, 0));
 
         txtAreaRiwayat.setEditable(false);
         txtAreaRiwayat.setColumns(20);
@@ -221,7 +145,7 @@ public class FormDiskon extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -229,57 +153,46 @@ public class FormDiskon extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtHargaAsliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHargaAsliActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtHargaAsliActionPerformed
-
     private void btnHitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHitungActionPerformed
-        // TODO add your handling code here:
+
        try {
         double hargaAsli = Double.parseDouble(txtHargaAsli.getText());
+        int diskon = Integer.parseInt(comboDiskon.getSelectedItem().toString().replace("%", ""));
+        String kupon = txtKupon.getText().trim().toUpperCase();
+        
+        // Tambahan diskon dari kupon
+        int diskonKupon = 0;
+        diskonKupon = switch (kupon) {
+               case "HEMAT10" -> 10;
+               case "HEMAT25" -> 25;
+               case "PROMO50" -> 50;
+               default -> 0;
+           };
 
-        // Ambil diskon dari comboBox
-        int diskonPersen = Integer.parseInt(
-            comboDiskon.getSelectedItem().toString().replace("%", "")
-        );
+        int totalDiskon = diskon + diskonKupon;
+        if (totalDiskon > 80) totalDiskon = 80; // batasi maksimal 80% biar logis
 
-        // Cek kupon
-        int tambahanKupon = 0;
-        if (txtKupon.getText().equalsIgnoreCase("DISKON5")) {
-            tambahanKupon = 5;
-        }
+        double hargaAkhir = hargaAsli - (hargaAsli * totalDiskon / 100);
+        double penghematan = hargaAsli - hargaAkhir;
 
-        int totalDiskon = diskonPersen + tambahanKupon;
-        double jumlahDiskon = hargaAsli * totalDiskon / 100;
-        double hargaAkhir = hargaAsli - jumlahDiskon;
-
-        // Tampilkan hasil
         txtHargaAkhir.setText(String.format("%.2f", hargaAkhir));
-        txtPenghematan.setText(String.format("%.2f", jumlahDiskon));
+        txtPenghematan.setText(String.format("%.2f", penghematan));
 
-        // Tambahkan ke JTextArea riwayat
-        txtAreaRiwayat.append(
-            "Harga Asli: " + hargaAsli +
-            " | Diskon: " + totalDiskon + "%" +
-            " | Harga Akhir: " + hargaAkhir + "\n"
-        );
+        // Tambahkan ke riwayat
+        txtAreaRiwayat.append("Harga: Rp" + hargaAsli +
+                           " | Diskon: " + totalDiskon + "%" +
+                           " | Akhir: Rp" + String.format("%.2f", hargaAkhir) + "\n");
 
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this,
-                "Masukkan angka yang valid pada kolom Harga Asli!",
-                "Error", JOptionPane.ERROR_MESSAGE);
-        }
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Masukkan angka yang valid untuk harga!", "Error", JOptionPane.ERROR_MESSAGE);
+    }
     }//GEN-LAST:event_btnHitungActionPerformed
-
-    private void txtKuponActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtKuponActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtKuponActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
         // TODO add your handling code here:
@@ -295,12 +208,8 @@ public class FormDiskon extends javax.swing.JFrame {
         txtHargaAsli.requestFocus();
     }//GEN-LAST:event_btnResetActionPerformed
 
-    private void comboDiskonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboDiskonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_comboDiskonActionPerformed
-
     private void comboDiskonItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboDiskonItemStateChanged
-        // TODO add your handling code here:
+
         if (evt.getStateChange() == java.awt.event.ItemEvent.SELECTED) {
             int diskon = Integer.parseInt(
                 comboDiskon.getSelectedItem().toString().replace("%", "")
@@ -310,10 +219,21 @@ public class FormDiskon extends javax.swing.JFrame {
     }//GEN-LAST:event_comboDiskonItemStateChanged
 
     private void sliderDiskonStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_sliderDiskonStateChanged
-        // TODO add your handling code here:
+
         int nilai = sliderDiskon.getValue();
         comboDiskon.setSelectedItem(nilai + "%");
     }//GEN-LAST:event_sliderDiskonStateChanged
+
+    private void txtHargaAsliKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtHargaAsliKeyTyped
+        char c = evt.getKeyChar();
+        if (!Character.isDigit(c) && c != java.awt.event.KeyEvent.VK_BACK_SPACE && c != java.awt.event.KeyEvent.VK_DELETE) {
+            evt.consume(); 
+        }
+    }//GEN-LAST:event_txtHargaAsliKeyTyped
+
+    private void txtHargaAsliFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtHargaAsliFocusGained
+        txtHargaAsli.setText("");
+    }//GEN-LAST:event_txtHargaAsliFocusGained
 
     /**
      * @param args the command line arguments
