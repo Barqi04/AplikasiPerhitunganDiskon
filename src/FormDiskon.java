@@ -30,10 +30,10 @@ public class FormDiskon extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        lblHargaAsli = new javax.swing.JLabel();
+        lblPersentaseDiskon = new javax.swing.JLabel();
+        lblHargaAkhir = new javax.swing.JLabel();
+        lblJumlahPenghematan = new javax.swing.JLabel();
         txtHargaAsli = new javax.swing.JTextField();
         txtHargaAkhir = new javax.swing.JTextField();
         txtPenghematan = new javax.swing.JTextField();
@@ -42,30 +42,39 @@ public class FormDiskon extends javax.swing.JFrame {
         comboDiskon = new javax.swing.JComboBox<>();
         txtKupon = new javax.swing.JTextField();
         sliderDiskon = new javax.swing.JSlider();
-        lblSlider = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        lblKodeKupon = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAreaRiwayat = new javax.swing.JTextArea();
+        lblHemat10 = new javax.swing.JLabel();
+        lblHemat25 = new javax.swing.JLabel();
+        lblHemat50 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(42, 44, 56));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("Aplikasi Perhitungan Diskon");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(152, 17, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(245, 245, 245));
+        jLabel1.setText("️Aplikasi Perhitungan Diskon");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, -1, -1));
 
-        jLabel2.setText("Harga asli");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 62, -1, -1));
+        lblHargaAsli.setForeground(new java.awt.Color(245, 245, 245));
+        lblHargaAsli.setText("Harga asli");
+        jPanel1.add(lblHargaAsli, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
 
-        jLabel3.setText("Persentase Diskon");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 102, -1, -1));
+        lblPersentaseDiskon.setForeground(new java.awt.Color(245, 245, 245));
+        lblPersentaseDiskon.setText("Persentase Diskon");
+        jPanel1.add(lblPersentaseDiskon, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, -1, -1));
 
-        jLabel4.setText("Harga Akhir");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 223, -1, -1));
+        lblHargaAkhir.setForeground(new java.awt.Color(245, 245, 245));
+        lblHargaAkhir.setText("Harga Akhir");
+        jPanel1.add(lblHargaAkhir, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, -1, -1));
 
-        jLabel5.setText("Jumlah Penghematan");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 263, -1, -1));
+        lblJumlahPenghematan.setForeground(new java.awt.Color(245, 245, 245));
+        lblJumlahPenghematan.setText("Jumlah Penghematan");
+        jPanel1.add(lblJumlahPenghematan, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
 
         txtHargaAsli.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -77,29 +86,35 @@ public class FormDiskon extends javax.swing.JFrame {
                 txtHargaAsliKeyTyped(evt);
             }
         });
-        jPanel1.add(txtHargaAsli, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 59, 193, -1));
+        jPanel1.add(txtHargaAsli, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, 200, -1));
 
         txtHargaAkhir.setEditable(false);
-        jPanel1.add(txtHargaAkhir, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 220, 179, -1));
+        jPanel1.add(txtHargaAkhir, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 200, -1));
 
         txtPenghematan.setEditable(false);
-        jPanel1.add(txtPenghematan, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 260, 179, -1));
+        jPanel1.add(txtPenghematan, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 200, -1));
 
+        btnHitung.setBackground(new java.awt.Color(24, 158, 101));
+        btnHitung.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnHitung.setForeground(new java.awt.Color(245, 245, 245));
         btnHitung.setText("Hitung");
         btnHitung.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHitungActionPerformed(evt);
             }
         });
-        jPanel1.add(btnHitung, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, -1, -1));
+        jPanel1.add(btnHitung, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 370, -1, -1));
 
+        btnReset.setBackground(new java.awt.Color(230, 68, 72));
+        btnReset.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnReset.setForeground(new java.awt.Color(245, 245, 245));
         btnReset.setText("Reset");
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResetActionPerformed(evt);
             }
         });
-        jPanel1.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(304, 300, -1, -1));
+        jPanel1.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, -1, -1));
 
         comboDiskon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0%", "10%", "20%", "30%", "40%", "50%" }));
         comboDiskon.addItemListener(new java.awt.event.ItemListener() {
@@ -107,9 +122,10 @@ public class FormDiskon extends javax.swing.JFrame {
                 comboDiskonItemStateChanged(evt);
             }
         });
-        jPanel1.add(comboDiskon, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 99, 193, -1));
-        jPanel1.add(txtKupon, new org.netbeans.lib.awtextra.AbsoluteConstraints(197, 183, 179, -1));
+        jPanel1.add(comboDiskon, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 200, -1));
+        jPanel1.add(txtKupon, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 200, -1));
 
+        sliderDiskon.setForeground(new java.awt.Color(245, 245, 245));
         sliderDiskon.setMajorTickSpacing(10);
         sliderDiskon.setMaximum(50);
         sliderDiskon.setPaintLabels(true);
@@ -119,15 +135,15 @@ public class FormDiskon extends javax.swing.JFrame {
                 sliderDiskonStateChanged(evt);
             }
         });
-        jPanel1.add(sliderDiskon, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 133, -1, -1));
+        jPanel1.add(sliderDiskon, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 350, -1));
 
-        lblSlider.setText("Slider Diskon");
-        jPanel1.add(lblSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 133, -1, -1));
+        lblKodeKupon.setForeground(new java.awt.Color(245, 245, 245));
+        lblKodeKupon.setText("Kode Kupon");
+        jPanel1.add(lblKodeKupon, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
 
-        jLabel7.setText("Kode Kupon");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 186, -1, -1));
-
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Riwayat Perhitungan"));
+        jPanel2.setBackground(new java.awt.Color(42, 44, 56));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Riwayat Perhitungan", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 15), new java.awt.Color(245, 245, 245))); // NOI18N
+        jPanel2.setForeground(new java.awt.Color(245, 245, 245));
         jPanel2.setLayout(new java.awt.GridLayout(1, 0));
 
         txtAreaRiwayat.setEditable(false);
@@ -137,23 +153,41 @@ public class FormDiskon extends javax.swing.JFrame {
 
         jPanel2.add(jScrollPane1);
 
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 350, 170));
+
+        lblHemat10.setBackground(new java.awt.Color(241, 196, 15));
+        lblHemat10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblHemat10.setForeground(new java.awt.Color(0, 0, 0));
+        lblHemat10.setText("HEMAT10");
+        lblHemat10.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        lblHemat10.setOpaque(true);
+        jPanel1.add(lblHemat10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
+
+        lblHemat25.setBackground(new java.awt.Color(241, 196, 15));
+        lblHemat25.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblHemat25.setForeground(new java.awt.Color(0, 0, 0));
+        lblHemat25.setText("HEMAT25");
+        lblHemat25.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        lblHemat25.setOpaque(true);
+        jPanel1.add(lblHemat25, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 70, -1));
+
+        lblHemat50.setBackground(new java.awt.Color(241, 196, 15));
+        lblHemat50.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblHemat50.setForeground(new java.awt.Color(0, 0, 0));
+        lblHemat50.setText("PROMO50");
+        lblHemat50.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        lblHemat50.setOpaque(true);
+        jPanel1.add(lblHemat50, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 70, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 409, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -191,7 +225,7 @@ public class FormDiskon extends javax.swing.JFrame {
 
     } catch (NumberFormatException e) {
         JOptionPane.showMessageDialog(this, "Masukkan angka yang valid untuk harga!", "Error", JOptionPane.ERROR_MESSAGE);
-    }
+        }
     }//GEN-LAST:event_btnHitungActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
@@ -275,15 +309,17 @@ public class FormDiskon extends javax.swing.JFrame {
     private javax.swing.JButton btnReset;
     private javax.swing.JComboBox<String> comboDiskon;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel lblSlider;
+    private javax.swing.JLabel lblHargaAkhir;
+    private javax.swing.JLabel lblHargaAsli;
+    private javax.swing.JLabel lblHemat10;
+    private javax.swing.JLabel lblHemat25;
+    private javax.swing.JLabel lblHemat50;
+    private javax.swing.JLabel lblJumlahPenghematan;
+    private javax.swing.JLabel lblKodeKupon;
+    private javax.swing.JLabel lblPersentaseDiskon;
     private javax.swing.JSlider sliderDiskon;
     private javax.swing.JTextArea txtAreaRiwayat;
     private javax.swing.JTextField txtHargaAkhir;
